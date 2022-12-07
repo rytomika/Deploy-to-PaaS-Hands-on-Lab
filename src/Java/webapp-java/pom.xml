@@ -58,7 +58,29 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			 <plugin> 
+    <groupId>com.microsoft.azure</groupId>  
+    <artifactId>azure-webapp-maven-plugin</artifactId>  
+    <version>2.7.0</version>  
+    <configuration>
+      <subscriptionId>393acb30-01af-4aaa-9e29-609cc9375d1a</subscriptionId>
+      <resourceGroup>CloudWorkshop1207</resourceGroup>
+      <appName>rytomika-mcw</appName>
+      <deployment>
+      <resources>
+        <resource>
+        <type>jar</type>
+        <directory>${project.basedir}/target</directory>
+        <includes>
+          <include>*.jar</include>
+        </includes>
+        </resource>
+      </resources>
+      </deployment>
+    </configuration>
+   </plugin> 
 		</plugins>
+		   
 	</build>
 
 </project>
