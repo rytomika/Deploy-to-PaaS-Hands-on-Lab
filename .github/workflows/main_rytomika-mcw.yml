@@ -22,7 +22,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: 
+        run: |
           cd ${{ env.APP_PATH }}
           mvn clean install
 
@@ -31,7 +31,7 @@ jobs:
         with:
           name: java-app
           path: '${{ github.workspace }}/${{ env.APP_PATH }}/target/*.jar'
-          
+
   deploy:
     runs-on: windows-latest
     needs: build
